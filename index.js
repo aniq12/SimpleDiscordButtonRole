@@ -11,6 +11,8 @@ const client = new Client({
 
 client.on('ready', async () => {
     console.log('Ready!');
+    client.user.setActivity(``, { type: "LISTENING" })
+    client.user.setStatus('online') //online, dnd, idle
 })
 
 client.on('messageCreate', async (msg) => {
@@ -27,7 +29,7 @@ client.on('messageCreate', async (msg) => {
             const row = new MessageActionRow()
                 .setComponents([button])
             channel.send({ content: 'Click button below to verify', components: [row] })
-            msg.reply('Berhasil mengirim pesan')
+            msg.reply('Successfully sent message')
         }
     }
 })
