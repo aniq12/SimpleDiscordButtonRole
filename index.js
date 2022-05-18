@@ -18,7 +18,6 @@ client.on('messageCreate', async (msg) => {
     if (msg.content.startsWith(prefix)) {
         if (args[0] === `send`) {
             const channel = msg.mentions.channels.first() || msg.guild.channels.cache.get(args[1]);
-            console.log(args[0])
             if (!channel) return msg.reply('Please provide a valid channel mention or ID.');
             const button = new MessageButton()
                 .setCustomId('verify-button')
