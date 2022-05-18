@@ -1,5 +1,6 @@
 {
   "token": "YOUR BOT TOKEN",
   "prefix": "YOUR BOT PREFIX",
-  "roleId": "YOUR ROLE ID"
+  "roleId": "YOUR ROLE ID",
+  "emojiId": "YOUR EMOJI ID"
 }
