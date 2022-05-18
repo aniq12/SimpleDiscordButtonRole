@@ -38,7 +38,12 @@ client.on('interactionCreate', async (interaction) => {
     if (!interaction.isButton()) return
     const { customId, guild, member } = interaction
     if (customId === 'verify-button') {
-        await member.roles.add(roleId).catch(e => console.error(e))
+        try {
+            member.roles.add(roleId)
+        } catch (e) {
+            console.error(e)
+            interaction.reply({ content: 'Something went wrong', ephemeral: true })
+        }
         interaction.reply({ content: 'Success', ephemeral: true })
     }
 })
