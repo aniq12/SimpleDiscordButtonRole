@@ -1,5 +1,5 @@
 const { Client, Intents, MessageButton, MessageActionRow } = require('discord.js');
-const { prefix, token, roleId } = require('./config.json');
+const { prefix, token, roleId, emojiId } = require('./config.json');
 const client = new Client({
     intents: [
         Intents.FLAGS.GUILDS,
@@ -23,7 +23,7 @@ client.on('messageCreate', async (msg) => {
                 .setCustomId('verify-button')
                 .setLabel('Verify')
                 .setStyle('SUCCESS')
-                .setEmoji('')
+                .setEmoji(emojiId)
             const row = new MessageActionRow()
                 .setComponents([button])
             channel.send({ content: 'Click button below to verify', components: [row] })
